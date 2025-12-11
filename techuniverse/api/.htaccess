@@ -1,0 +1,28 @@
+RewriteEngine On
+
+# Login
+RewriteRule ^login/?$ login.php [L,QSA]
+
+# version
+RewriteRule ^version/?$ version.php [L,QSA]
+
+# Info del usurio
+RewriteRule ^me/?$ me.php [L,QSA]
+
+# Lista de producto
+RewriteRule ^productos/?$ productos.php [L,QSA]
+
+# Detalle de un producto por id
+RewriteRule ^productos/([0-9]+)/?$ productos.php?id=$1 [L,QSA]
+
+# Listar con categoria
+RewriteRule ^productos/categoria/?$ productos.php?include=categoria [L,QSA]
+
+# Listar con categoria e Id
+RewriteRule ^productos/categoria/([0-9]+)/?$ productos.php?include=categoria&id=$1 [L,QSA]
+
+# listar todos los productos de una categoria
+RewriteRule ^categoria/([0-9]+)/productos/?$ productos.php?id_categoria=$1 [L,QSA]
+
+# Contar Productos
+RewriteRule ^productos/count/?$ productos.php?count [L,QSA]
